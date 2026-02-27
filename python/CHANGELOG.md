@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.0.4-beta.2 (2026-02-27)
+
+### Bug Fixes
+
+- Pyproject.toml semantic release build command
+  ([`edd002a`](https://github.com/mrcointreau/algokit-shared-config-test/commit/edd002a2e40ce78e813f710ad3cd4107eb5b3573))
+
+
 ## v1.0.4-beta.1 (2026-02-27)
 
 ### Bug Fixes
