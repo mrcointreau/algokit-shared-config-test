@@ -1,0 +1,15 @@
+.DS_Store
+
+# Node
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+.coverage
+htmlcov/
+.pytest_cache/

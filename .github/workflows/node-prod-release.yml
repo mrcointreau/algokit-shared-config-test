@@ -1,0 +1,11 @@
+name: Node Prod Release
+
+on:
+  workflow_dispatch:
+
+jobs:
+  release:
+    uses: algorandfoundation/algokit-shared-config/.github/workflows/prod-release.yml@ci/reusable-release
+    secrets:
+      BOT_ID: ${{ secrets.BOT_ID }}
+      BOT_SK: ${{ secrets.BOT_SK }}

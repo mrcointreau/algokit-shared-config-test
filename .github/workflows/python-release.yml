@@ -1,0 +1,48 @@
+name: Python Release
+
+on:
+  push:
+    branches:
+      - main
+      - alpha
+    paths:
+      - 'python/**'
+  workflow_dispatch:
+    inputs:
+      production_release:
+        description: "Production release?"
+        type: boolean
+        required: true
+        default: true
+
+concurrency: python-release
+
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  release:
+    uses: algorandfoundation/algokit-shared-config/.github/workflows/python-release.yaml@feat/python-release-workflow
+    with:
+      working-directory: python
+      production_release: ${{ inputs.production_release || false }}
+    secrets:
+      BOT_ID: ${{ secrets.BOT_ID }}
+      BOT_SK: ${{ secrets.BOT_SK }}
+
+  publish:
+    needs: release
+    if: needs.release.outputs.released == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@v8
+        with:
+          name: ${{ needs.release.outputs.artifact-name }}
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          verbose: true
+          repository-url: https://test.pypi.org/legacy/

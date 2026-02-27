@@ -1,0 +1,39 @@
+name: Node Release
+
+on:
+  push:
+    branches:
+      - main
+      - release
+    paths:
+      - 'node/**'
+  workflow_dispatch:
+
+concurrency: release
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  ci:
+    uses: algorandfoundation/algokit-shared-config/.github/workflows/node-ci.yml@ci/reusable-release
+    with:
+      working-directory: node
+
+  build:
+    needs: ci
+    uses: algorandfoundation/algokit-shared-config/.github/workflows/node-build-zip.yml@ci/reusable-release
+    with:
+      working-directory: node
+      build-path: dist
+      artifact-name: package
+
+  release:
+    needs: build
+    uses: algorandfoundation/algokit-shared-config/.github/workflows/node-release.yml@ci/reusable-release
+    with:
+      working-directory: node
+    secrets:
+      BOT_ID: ${{ secrets.BOT_ID }}
+      BOT_SK: ${{ secrets.BOT_SK }}

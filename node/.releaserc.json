@@ -1,0 +1,26 @@
+{
+  "branches": [
+    { "name": "main", "prerelease": "beta" },
+    { "name": "release" }
+  ],
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "conventionalcommits",
+        "releaseRules": [
+          { "type": "build", "release": "patch" },
+          { "type": "chore", "release": "patch" }
+        ]
+      }
+    ],
+    [
+      "@semantic-release/release-notes-generator",
+      {
+        "preset": "conventionalcommits"
+      }
+    ],
+    ["@semantic-release/npm", { "pkgRoot": "dist" }],
+    "@semantic-release/github"
+  ]
+}

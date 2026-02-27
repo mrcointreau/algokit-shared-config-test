@@ -1,0 +1,14 @@
+name: Node PR
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'node/**'
+
+jobs:
+  ci:
+    uses: algorandfoundation/algokit-shared-config/.github/workflows/node-ci.yml@ci/reusable-release
+    with:
+      working-directory: node
+      run-build: true
