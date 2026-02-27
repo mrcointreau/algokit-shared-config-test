@@ -1,6 +1,6 @@
 [project]
 name = "algokit-shared-config-test"
-version = "1.0.4-beta.2"
+version = "1.0.4"
 description = "Test consumer for algokit-shared-config Python reusable workflows"
 requires-python = ">=3.12"
 

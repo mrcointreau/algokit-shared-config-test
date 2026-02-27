@@ -4,7 +4,7 @@ requires-python = ">=3.12"
 
 [[package]]
 name = "algokit-shared-config-test"
-version = "1.0.4b2"
+version = "1.0.4"
 source = { editable = "." }
 
 [package.dev-dependencies]
