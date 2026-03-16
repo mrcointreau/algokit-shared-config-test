@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.1.0-beta.1 (2026-03-16)
+
+### Features
+
+- Remove test comment
+  ([`0e90010`](https://github.com/mrcointreau/algokit-shared-config-test/commit/0e90010cc4a310fc86e0f001893b41d4961aac74))
+
+
 ## v1.1.0-alpha.1 (2026-03-16)
 
 ### Features
