@@ -2,6 +2,14 @@
 
 <!-- version list -->
 
+## v1.0.5-beta.1 (2026-03-16)
+
+### Chores
+
+- Remove explicit remote token config from semantic release
+  ([`bc48753`](https://github.com/mrcointreau/algokit-shared-config-test/commit/bc4875373f49d084492706a881de855128a0c26f))
+
+
 ## v1.0.5-alpha.1 (2026-02-27)
 
 ### Bug Fixes
