@@ -2,6 +2,17 @@
 
 <!-- version list -->
 
+## v1.0.5-alpha.1 (2026-02-27)
+
+### Bug Fixes
+
+- Add test comment
+  ([`3e4ba6f`](https://github.com/mrcointreau/algokit-shared-config-test/commit/3e4ba6f6263b2238dafa13be1b937d3c47a2907e))
+
+- Remove branches from python-pr.yml
+  ([`3756e20`](https://github.com/mrcointreau/algokit-shared-config-test/commit/3756e20cf6af6dae9202d1d490126123c9eb05ff))
+
+
 ## v1.0.4 (2026-02-27)
 
 

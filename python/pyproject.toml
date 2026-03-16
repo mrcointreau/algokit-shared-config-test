@@ -1,6 +1,6 @@
 [project]
 name = "algokit-shared-config-test"
-version = "1.0.4"
+version = "1.0.5-alpha.1"
 description = "Test consumer for algokit-shared-config Python reusable workflows"
 requires-python = ">=3.12"
 
@@ -75,6 +75,3 @@ patch_tags = ["fix", "perf", "docs"]
 [tool.semantic_release.publish]
 dist_glob_patterns = ["dist/*"]
 upload_to_vcs_release = true
-
-[tool.semantic_release.remote.token]
-env = "GITHUB_TOKEN"
