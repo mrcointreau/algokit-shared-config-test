@@ -22,7 +22,14 @@ permissions:
   contents: write
 
 jobs:
+  ci:
+    uses: algorandfoundation/algokit-shared-config/.github/workflows/python-ci.yaml@feat/python-release-workflow
+    with:
+      working-directory: python
+      install-algokit: false
+
   release:
+    needs: ci
     uses: algorandfoundation/algokit-shared-config/.github/workflows/python-release.yaml@feat/python-release-workflow
     with:
       working-directory: python
